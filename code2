@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+ 
+
+
+void printTable (int System) {
+    if ((System != 8) && (System !=10) && (System != 16)) {
+        
+        cerr << "Ошибка! Неверное значение" << endl;
+        
+    }
+    
+    else {
+        
+        for (int i = 2; i < 9; i++){
+            
+            for (int j = 1; j < 9; j++){
+                
+                switch(System) {
+                    
+                    case 8:
+                    cout << oct << i << " * " << j << " = " << i * j << endl;
+                    
+                    break;
+                    
+                    case 10:
+                    cout << oct << i << " * " << j << " = " << i * j << endl;
+                    
+                    break;
+                    
+                    case 16:
+                    cout << oct << i << " * " << j << " = " << i * j << endl;
+                    
+                    break;
+                }
+            }
+            
+            cout << endl;
+        }
+    }
+}
+
+int main(){
+    
+    int Input;
+    
+    cout << "Введите число (8, 10 или 16): ";
+    cin >> Input;
+    
+    printTable(Input);
+    
+    return 0;
+}
