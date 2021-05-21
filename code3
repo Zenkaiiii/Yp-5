@@ -1,0 +1,40 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+
+    ifstream f("data_v8.txt");
+    f.open ("data_v8.txt");
+    double digit;
+    double result = 0;
+    int iterator = 0;
+    
+    while (true) {
+
+        f >> digit;
+
+        if (f.eof()) {
+
+            break;
+        }
+
+        if (f.fail()) {
+
+            cout << "Error" << endl;
+            break;
+        }
+
+        ++iterator;
+
+        result += digit;
+    }
+
+    cout << (result / iterator) << endl;
+
+    f.close();
+
+    return 0;
+}
